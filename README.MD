@@ -68,8 +68,4 @@ Swagger UI
       description: the job id
 ```
 # JobsAPI
-# JobsAPI
-# JobsAPI
-# JobsAPI
-# JobsAPI
-# JobsAPI
+
