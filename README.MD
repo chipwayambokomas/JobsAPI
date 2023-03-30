@@ -1,7 +1,7 @@
 
 # JobsAPI
 
-In this project I ceated an API for a Job tracker, it allows a user to login or register and once done the server will pass a jsonWebToken to the user allowing the user to create, delete, edit and display jobs only for said user.
+In this final project in my online course I created an API for a Job tracker, it allows a user to login or register and once done the server will pass a jsonWebToken to the user allowing the user to create, delete, edit and display jobs only for said user.
 
 # API Documentation
 
