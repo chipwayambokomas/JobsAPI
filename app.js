@@ -22,6 +22,10 @@ const authRouter = require('./routes/auth')
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 
+// Swagger
+const swaggerUI = require('swagger-ui-express')
+const yaml = require('yamljs')
+const swaggerDocument = yaml.load('./swagger.yaml')
 
 app.use(express.json());
 app.use(helmet())
@@ -42,6 +46,11 @@ app.use('/api/v1/auth', authRouter)
 // if you stick the middleware infront of the route then all routes will be authenticated
 app.use('/api/v1/jobs', authenticateUser, jobsRouter)
 
+app.get('/', (req,res) =>{
+  res.send('<h1>Jobs API </h1><a href="/api-docs">Docs</a>')
+})
+
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
